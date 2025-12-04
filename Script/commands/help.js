@@ -12,7 +12,7 @@ module.exports.config = {
 	cooldowns: 5,
 	envConfig: {
 		autoUnsend: true,
-		delayUnsend: 20
+		delayUnsend: 30
 	}
 };
 
