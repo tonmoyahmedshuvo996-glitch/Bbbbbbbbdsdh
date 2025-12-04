@@ -11,14 +11,14 @@ module.exports.config = {
 	usages: "[command name/page number]",
 	cooldowns: 5,
 	envConfig: {
-    	autoUnsend: true,
-    	delayUnsend: 20
+		autoUnsend: true,
+		delayUnsend: 20
 	}
 };
 
 module.exports.languages = {
 	"en": {
-    	"moduleInfo": `╭━━━━━━━━━━━━━━━━╮
+		"moduleInfo": `╭━━━━━━━━━━━━━━━━╮
 ┃ ✨ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐈𝐍𝐅𝐎 ✨
 ┣━━━━━━━━━━━┫
 ┃ 🔖 Name: %1
@@ -33,14 +33,13 @@ module.exports.languages = {
 ┃ 🤖 Bot Name: %9
 ┃ 👑 Owner👉 m.me/61582708907708
 ╰━━━━━━━━━━━━━━━━╯`,
-    	"helpList": "[ There are %1 commands. Use: \"%2help commandName\" to view more. ]",
-    	"user": "User",
-    	"adminGroup": "Admin Group",
-    	"adminBot": "Admin Bot"
+		"helpList": "[ There are %1 commands. Use: \"%2help commandName\" to view more. ]",
+		"user": "User",
+		"adminGroup": "Admin Group",
+		"adminBot": "Admin Bot"
 	}
 };
 
-// 🔰
 const videoPath = path.resolve("help.mp4");
 function getVideoAttachment() {
 	return fs.existsSync(videoPath) ? [fs.createReadStream(videoPath)] : [];
@@ -62,18 +61,27 @@ module.exports.handleEvent = function ({ api, event, getText }) {
 	const prefix = threadSetting.PREFIX || global.config.PREFIX;
 
 	const detail = getText("moduleInfo",
-    	command.config.name,
-    	command.config.usages || "Not Provided",
-    	command.config.description || "Not Provided",
-    	command.config.hasPermssion,
-    	command.config.credits || "Unknown",
-    	command.config.commandCategory || "Unknown",
-    	command.config.cooldowns || 0,
-    	prefix,
-    	global.config.BOTNAME || "🔰 𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁 🔰"
+		command.config.name,
+		command.config.usages || "Not Provided",
+		command.config.description || "Not Provided",
+		command.config.hasPermssion,
+		command.config.credits || "Unknown",
+		command.config.commandCategory || "Unknown",
+		command.config.cooldowns || 0,
+		prefix,
+		global.config.BOTNAME || "🔰 𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁 🔰"
 	);
 
-	api.sendMessage({ body: detail, attachment: getVideoAttachment() }, threadID, messageID);
+	api.sendMessage({ body: detail, attachment: getVideoAttachment() }, threadID, (err, info) => {
+		if (err) return;
+
+		const { autoUnsend, delayUnsend } = module.exports.config.envConfig;
+		if (autoUnsend) {
+			setTimeout(() => {
+				api.unsendMessage(info.messageID);
+			}, delayUnsend * 1000);
+		}
+	}, messageID);
 };
 
 // ============================
@@ -86,33 +94,32 @@ module.exports.run = async function({ api, event, args, getText }) {
 	const prefix = threadSetting.PREFIX || global.config.PREFIX;
 
 	api.sendMessage("▒▒▒▒▒▒▒▒▒▒ 0% ✨", threadID, async (err, info) => {
-    	if (err) return console.error(err);
-    	const progressMsgID = info.messageID;
+		if (err) return console.error(err);
+		const progressMsgID = info.messageID;
 
-    	let step = 0;
-    	const interval = 120; // smooth & fast
-    	const progressBarLength = 10;
+		let step = 0;
+		const interval = 120;
+		const progressBarLength = 10;
 
-    	const progressInterval = setInterval(() => {
-        	step += 1;
-        	if (step > 10) {
-            	clearInterval(progressInterval);
-            	setTimeout(() => {
-                	api.unsendMessage(progressMsgID);
-                	sendHelpInfo(api, threadID, messageID, args, getText, prefix, commands);
-            	}, 1000);
-            	return;
-        	}
+		const progressInterval = setInterval(() => {
+			step += 1;
+			if (step > 10) {
+				clearInterval(progressInterval);
+				setTimeout(() => {
+					api.unsendMessage(progressMsgID);
+					sendHelpInfo(api, threadID, messageID, args, getText, prefix, commands);
+				}, 1000);
+				return;
+			}
 
-        	const filledBlocks = "█".repeat(step);
-        	const emptyBlocks = "▒".repeat(progressBarLength - step);
+			const filledBlocks = "█".repeat(step);
+			const emptyBlocks = "▒".repeat(progressBarLength - step);
 
-        	// Spark effect
-        	const spark = step % 2 === 0 ? "✨" : "💎";
-        	const percent = step * 10;
-        	api.editMessage(`${filledBlocks}${emptyBlocks} ${percent}% ${spark}`, progressMsgID, threadID);
+			const spark = step % 2 === 0 ? "✨" : "💎";
+			const percent = step * 10;
+			api.editMessage(`${filledBlocks}${emptyBlocks} ${percent}% ${spark}`, progressMsgID, threadID);
 
-    	}, interval);
+		}, interval);
 	});
 };
 
@@ -121,21 +128,31 @@ module.exports.run = async function({ api, event, args, getText }) {
 // ============================
 function sendHelpInfo(api, threadID, messageID, args, getText, prefix, commands) {
 	if (args[0] && commands.has(args[0].toLowerCase())) {
-    	const command = commands.get(args[0].toLowerCase());
-    	const detailText = getText("moduleInfo",
-        	command.config.name,
-        	command.config.usages || "Not Provided",
-        	command.config.description || "Not Provided",
-        	command.config.hasPermssion,
-        	command.config.credits || "Unknown",
-        	command.config.commandCategory || "Unknown",
-        	command.config.cooldowns || 0,
-        	prefix,
-        	global.config.BOTNAME || "🔰 𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁 🔰"
-    	);
+		const command = commands.get(args[0].toLowerCase());
+		const detailText = getText("moduleInfo",
+			command.config.name,
+			command.config.usages || "Not Provided",
+			command.config.description || "Not Provided",
+			command.config.hasPermssion,
+			command.config.credits || "Unknown",
+			command.config.commandCategory || "Unknown",
+			command.config.cooldowns || 0,
+			prefix,
+			global.config.BOTNAME || "🔰 𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁 🔰"
+		);
 
-    	api.sendMessage({ body: detailText, attachment: getVideoAttachment() }, threadID, messageID);
-    	return;
+		api.sendMessage({ body: detailText, attachment: getVideoAttachment() }, threadID, (err, info) => {
+			if (err) return;
+
+			const { autoUnsend, delayUnsend } = module.exports.config.envConfig;
+			if (autoUnsend) {
+				setTimeout(() => {
+					api.unsendMessage(info.messageID);
+				}, delayUnsend * 1000);
+			}
+		}, messageID);
+
+		return;
 	}
 
 	const arrayInfo = Array.from(commands.keys()).filter(Boolean).sort();
@@ -161,5 +178,14 @@ ${msg}
 ┃ 👑 Owner👉 m.me/61582708907708
 ╰━━━━━━━━━━━━━━━━╯`;
 
-	api.sendMessage({ body: text, attachment: getVideoAttachment() }, threadID, messageID);
-                       	}
+	api.sendMessage({ body: text, attachment: getVideoAttachment() }, threadID, (err, info) => {
+		if (err) return;
+
+		const { autoUnsend, delayUnsend } = module.exports.config.envConfig;
+		if (autoUnsend) {
+			setTimeout(() => {
+				api.unsendMessage(info.messageID);
+			}, delayUnsend * 1000);
+		}
+	}, messageID);
+}
