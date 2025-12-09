@@ -25,7 +25,7 @@ module.exports.languages = {
 ┃ 📄 Usage: %2
 ┃ 📜 Description: %3
 ┃ 🔑 Permission: %4
-┃ 👨‍💻 Credit:🔰Rahat Islam🔰
+┃ 👨‍💻 Credit:🔰Tonmoy Ahmed Shuvo🔰
 ┃ 📂 Category: %6
 ┃ ⏳ Cooldown: %7s
 ┣━━━━━━━━━━━━━━━━┫
@@ -69,7 +69,7 @@ module.exports.handleEvent = function ({ api, event, getText }) {
 		command.config.commandCategory || "Unknown",
 		command.config.cooldowns || 0,
 		prefix,
-		global.config.BOTNAME || "🔰 𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁 🔰"
+		global.config.BOTNAME || "🔰 Shuvo_Bot 🔰"
 	);
 
 	api.sendMessage({ body: detail, attachment: getVideoAttachment() }, threadID, (err, info) => {
@@ -165,7 +165,7 @@ function sendHelpInfo(api, threadID, messageID, args, getText, prefix, commands)
 	const msg = helpView.map(cmdName => `┃🔹 ✪ ${cmdName}`).join("\n");
 
 	const text = `╭━━━━━━━━━━━━━━━━╮
-┃ 🔰 𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁 🔰
+┃ 🔰 Shuvo_Bot 🔰
 ┃📜 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓 📜
 ┣━━━━━━━━━━━━━━━┫
 ┃ 📄 Page: ${page}/${totalPages}
@@ -175,7 +175,7 @@ ${msg}
 ┣━━━━━━━━━━━━━━━━┫
 ┃ ⚙ Prefix: ${prefix}
 ┃ 🤖 Bot Name: ${global.config.BOTNAME || "🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰"}
-┃ 👑 Owner👉 m.me/61582708907708
+┃ 👑 Owner👉 m.me/100082387123597
 ╰━━━━━━━━━━━━━━━━╯`;
 
 	api.sendMessage({ body: text, attachment: getVideoAttachment() }, threadID, (err, info) => {
