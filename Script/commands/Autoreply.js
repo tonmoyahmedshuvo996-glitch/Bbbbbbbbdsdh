@@ -24,7 +24,7 @@ module.exports.handleEvent = async function ({ api, event, Users }) {
     "👍": "সর এখান থেকে লাইকার আবাল..!🐸🤣👍⛏️",
     "help": "Prefix de sala",
     "hi": "এত হাই-হ্যালো কর ক্যান প্রিও..!😜🫵",
-    "fork2": "https://github.com/shuvobbzzzzz/Shuvo_bbzzzzzz.git ",
+    "fork2": "https://github.com/shuvobbzzzzz/Shuvo_bbzzzzzz.git",
     "pro": "Khud k0o KYa LeGend SmJhTi Hai 😂",
     "good morning": "GOOD MORNING দাত ব্রাশ করে খেয়ে নেও😚",
     "tor ball": "~ এখনো বাল উঠে নাই নাকি তোমার?? 🤖",
