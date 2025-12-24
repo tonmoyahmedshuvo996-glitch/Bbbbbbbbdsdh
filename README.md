@@ -1,13 +1,13 @@
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 <p align="center">
-  <a href="####"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰`" alt="">
+  <a href="####"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰shuvo🔰`" alt="">
 </p>
     <a><img       
-src='https://i.imgur.com/LyHic3i.gif'/></a>
+src='/></a>
 
 -------
 
-<img src='https://i.imgur.com/7VGnvSx.jpeg'/>
+<img src='/>
 
 _______
 ### <br>   ❖ DEPLOY_WORKFLOWS ❖
@@ -86,7 +86,7 @@ node Xrahat.js
 ## Facebook ID:👉 <a href="https://www.facebook.com/share/14N3ACfd4fM/">Link</a>
 
 <p align="center">
-  <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰`" alt="">
+  <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰shuvo_𝗕𝗼𝘁🔰`" alt="">
 </p>
 
 ## License
