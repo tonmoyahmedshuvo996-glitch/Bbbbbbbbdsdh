@@ -78,12 +78,12 @@ node Xrahat.js
 ```
 
 ---
-###  🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰
+###  🔰shuvo_𝗕𝗼𝘁🔰
 ❖ ***`বট রান দিতে সমস্যা হলে ফেসবুকে যোগাযোগ করো
 ❖👇নিচে আইডির লিঙ্ক আছে👇❖`** ❖
 
 ----------
-## Facebook ID:👉 <a href="https://www.facebook.com/share/14N3ACfd4fM/">Link</a>
+## Facebook ID:👉 <a href="
 
 <p align="center">
   <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰shuvo_𝗕𝗼𝘁🔰`" alt="">
@@ -104,7 +104,7 @@ This project is licensed under the GNU General Public License v3.0 or later - se
 
 Made by ***Rahat Islam***
 ### 👇*original fork*👇
-[![Main Fork Button](https://imgur.com/a/CkEkghF)](https://github.com/Boss-Rahat/Xrahat_Mirai-BOtt.git)
+[![Main Fork Button](https://imgur.com/a/CkEkghF)](https://github.com/Boss-Rahat/Xrah
 
 ```bash
 https://github.com/Boss-Rahat/Xrahat_Mirai-BOtt.git
