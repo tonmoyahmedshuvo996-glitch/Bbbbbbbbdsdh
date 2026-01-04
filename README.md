@@ -1,6 +1,6 @@
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 <p align="center">
-  <a href="####"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰shuvo🔰`" alt="">
+  <a href="####"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰RAHAT🔰`" alt="">
 </p>
     <a><img       
 src='/></a>
@@ -78,7 +78,7 @@ node Xrahat.js
 ```
 
 ---
-###  🔰shuvo_𝗕𝗼𝘁🔰
+###  🔰RAHAT_BOT🔰
 ❖ ***`বট রান দিতে সমস্যা হলে ফেসবুকে যোগাযোগ করো
 ❖👇নিচে আইডির লিঙ্ক আছে👇❖`** ❖
 
@@ -86,7 +86,7 @@ node Xrahat.js
 ## Facebook ID:👉 <a href="
 
 <p align="center">
-  <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰shuvo_𝗕𝗼𝘁🔰`" alt="">
+  <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=cyan&center=true&vCenter=true&multiline=false&lines=`🔰RAHAT_𝗕𝗼𝘁🔰`" alt="">
 </p>
 
 ## License
